@@ -17,6 +17,11 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn init</span></pre></td></tr></table></figure>
 
 <p>安装nextjs相关依赖</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn next react react-dom</span></pre></td></tr></table></figure>
+
+<p>将下面脚本添加到package.json中：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">"scripts"</span>: &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">"dev"</span>: <span class="string">"next"</span>,</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">"build"</span>: <span class="string">"next build"</span>,</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">"start"</span>: <span class="string">"next start"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
 <p>….未完待续</p>
 ]]></content>
       <categories>

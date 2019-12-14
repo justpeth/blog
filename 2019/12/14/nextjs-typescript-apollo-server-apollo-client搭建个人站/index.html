@@ -56,7 +56,7 @@
 <meta property="og:description" content="之前用react搭建了一套spa，但是感觉还差点啥，自己也从未体验过react、vue的服务端渲染，干脆着手搞一套react的ssr的个人站。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-12-14T06:15:18.000Z">
-<meta property="article:modified_time" content="2019-12-14T06:43:50.546Z">
+<meta property="article:modified_time" content="2019-12-14T10:32:27.097Z">
 <meta property="article:author" content="Justpeth">
 <meta property="article:tag" content="react">
 <meta property="article:tag" content="ssr">
@@ -238,7 +238,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-12-14 14:15:18 / 修改时间：14:43:50" itemprop="dateCreated datePublished" datetime="2019-12-14T14:15:18+08:00">2019-12-14</time>
+              <time title="创建时间：2019-12-14 14:15:18 / 修改时间：18:32:27" itemprop="dateCreated datePublished" datetime="2019-12-14T14:15:18+08:00">2019-12-14</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -277,6 +277,11 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">yarn init</span></pre></td></tr></table></figure>
 
 <p>安装nextjs相关依赖</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">yarn next react react-dom</span></pre></td></tr></table></figure>
+
+<p>将下面脚本添加到package.json中：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="attr">"scripts"</span>: &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">"dev"</span>: <span class="string">"next"</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">"build"</span>: <span class="string">"next build"</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="attr">"start"</span>: <span class="string">"next start"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
 <p>….未完待续</p>
 
     </div>
