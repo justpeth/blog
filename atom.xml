@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>烟雨不尽夜流离</title>
+  
+  <subtitle>人生每一天有许多事物都在改变，而难能可贵的是，也有不少东西历久弥新。&lt;br/&gt; 所以，珍惜，是一个值得读出声来自勉的词语。</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://www.justpeth.com/"/>
+  <updated>2019-12-14T06:43:50.546Z</updated>
+  <id>https://www.justpeth.com/</id>
+  
+  <author>
+    <name>Justpeth</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>nextjs 搭建个人站</title>
+    <link href="https://www.justpeth.com/2019/12/14/nextjs-typescript-apollo-server-apollo-client%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%AB%99/"/>
+    <id>https://www.justpeth.com/2019/12/14/nextjs-typescript-apollo-server-apollo-client%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%AB%99/</id>
+    <published>2019-12-14T06:15:18.000Z</published>
+    <updated>2019-12-14T06:43:50.546Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前用react搭建了一套spa，但是感觉还差点啥，自己也从未体验过react、vue的服务端渲染，干脆着手搞一套react的ssr的个人站。</p><a id="more"></a><h3 id="技术栈选择"><a href="#技术栈选择" class="headerlink" title="技术栈选择"></a>技术栈选择</h3><h4 id="渲染框架"><a href="#渲染框架" class="headerlink" title="渲染框架"></a>渲染框架</h4><p>Next.js 是一个轻量级的 React 服务端渲染应用框架，使用简单，按照官网例子操作就能迅速构建以个react的ssr应用。</p><h4 id="css预处理"><a href="#css预处理" class="headerlink" title="css预处理"></a>css预处理</h4><p>以前为接触vue时使用过less，之后公司一直使用scss，在船新版本的个人站，我选择的stylus（写的代码量能够更少）</p><h4 id="接口服务"><a href="#接口服务" class="headerlink" title="接口服务"></a>接口服务</h4><p>用习惯了RESTful风格的接口，自己也想尝试更新鲜的GraphQL风格的接口，就选择了apollo-serve、apollo-client搭建项目</p><h4 id="图片存储"><a href="#图片存储" class="headerlink" title="图片存储"></a>图片存储</h4><p>一个个人站，总会存储图片，这里推荐使用七牛云，首先七牛云注册就会有10g的免费空间，作为一个流量小的网站，完全是足够了。</p><h4 id="数据库选择"><a href="#数据库选择" class="headerlink" title="数据库选择"></a>数据库选择</h4><p>选择了相对于前端来说语法相对js的mongodb，sql的select写起来太费劲了。</p><h4 id="typescript"><a href="#typescript" class="headerlink" title="typescript"></a>typescript</h4><p>选择typescript，应该来说是很正常的，毕竟vue 3.0都拥抱ts了，自己也应该紧跟潮流，而且ts书写应用确实很香</p><p>总而言之，统而言之：项目的技术栈就确定为：nextjs graphql mongodb typescript stylus ant-design了，由于个人使用的是yarn管理依赖，使用npm的请对照着来，区别不大。</p><h3 id="项目搭建"><a href="#项目搭建" class="headerlink" title="项目搭建"></a>项目搭建</h3><h4 id="依赖安装"><a href="#依赖安装" class="headerlink" title="依赖安装"></a>依赖安装</h4><p>新建项目文件夹，然后初始化项目</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">yarn init</span></pre></td></tr></table></figure><p>安装nextjs相关依赖</p><p>….未完待续</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前用react搭建了一套spa，但是感觉还差点啥，自己也从未体验过react、vue的服务端渲染，干脆着手搞一套react的ssr的个人站。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="react" scheme="https://www.justpeth.com/categories/react/"/>
+    
+    
+      <category term="react" scheme="https://www.justpeth.com/tags/react/"/>
+    
+      <category term="ssr" scheme="https://www.justpeth.com/tags/ssr/"/>
+    
+      <category term="nextjs" scheme="https://www.justpeth.com/tags/nextjs/"/>
+    
+      <category term="apollo-client" scheme="https://www.justpeth.com/tags/apollo-client/"/>
+    
+      <category term="apolli-server" scheme="https://www.justpeth.com/tags/apolli-server/"/>
+    
+      <category term="ant-design" scheme="https://www.justpeth.com/tags/ant-design/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pm2安装</title>
+    <link href="https://www.justpeth.com/2019/12/12/pm2%E5%AE%89%E8%A3%85/"/>
+    <id>https://www.justpeth.com/2019/12/12/pm2%E5%AE%89%E8%A3%85/</id>
+    <published>2019-12-12T12:38:10.000Z</published>
+    <updated>2019-12-12T12:42:07.121Z</updated>
+    
+    <content type="html"><![CDATA[<p>pm2是一个进程管理工具,可以用它来管理你的node进程，并查看node进程的状态，当然也支持性能监控，进程守护，负载均衡等功能（编不下去了…）</p><a id="more"></a><p>1、安装pm2需要先安装node</p><p>2、全局安装pm2</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">npm install -g pm2</span></pre></td></tr></table></figure><p>安装完成后如下提示</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">/node-v10.16.2/node/bin/pm2 -&gt; /node-v10.16.2/node/lib/node_modules/pm2/bin/pm2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">/node-v10.16.2/node/bin/pm2-dev -&gt; /node-v10.16.2/node/lib/node_modules/pm2/bin/pm2-dev</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">/node-v10.16.2/node/bin/pm2-docker -&gt; /node-v10.16.2/node/lib/node_modules/pm2/bin/pm2-docker</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">/node-v10.16.2/node/bin/pm2-runtime -&gt; /node-v10.16.2/node/lib/node_modules/pm2/bin/pm2-runtime</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.2 (node_modules/pm2/node_modules/fsevents):</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform <span class="keyword">for</span> fsevents@2.1.2: wanted &#123;<span class="string">"os"</span>:<span class="string">"darwin"</span>,<span class="string">"arch"</span>:<span class="string">"any"</span>&#125; (current: &#123;<span class="string">"os"</span>:<span class="string">"linux"</span>,<span class="string">"arch"</span>:<span class="string">"x64"</span>&#125;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">+ pm2@4.1.2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">added 204 packages from 199 contributors <span class="keyword">in</span> 69.493s</span></pre></td></tr></table></figure><p>安装后，查看pm2版本</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">pm2 -v</span></pre></td></tr></table></figure><p>结果提示</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">-bash: pm2: <span class="built_in">command</span> not found</span></pre></td></tr></table></figure><p>需要对pm2添加软链</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ln -s /node-v10.16.2/node/bin/pm2 /usr/<span class="built_in">local</span>/bin/pm2</span></pre></td></tr></table></figure><p>结果失败了，啊哈哈哈…</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[root@VM_0_15_centos ~]<span class="comment"># ln -s /node-v10.16.2/node/bin/pm2 /usr/local/bin/pm2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">ln: failed to create symbolic link ‘/usr/<span class="built_in">local</span>/bin/pm2’: File exists</span></pre></td></tr></table></figure><p>进行操作</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">mv /usr/<span class="built_in">local</span>/bin/pm2 /tmp/</span></pre></td></tr></table></figure><p>再重新设置软链</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ln -s /node-v10.16.2/node/bin/pm2 /usr/<span class="built_in">local</span>/bin/pm2</span></pre></td></tr></table></figure><p>终于没有报错提示了，可以放心全局使用pm2了</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[root@VM_0_15_centos ~]<span class="comment"># pm2 -v</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">[PM2] Spawning PM2 daemon with pm2_home=/root/.pm2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">[PM2] PM2 Successfully daemonized</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">4.1.2</span></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;pm2是一个进程管理工具,可以用它来管理你的node进程，并查看node进程的状态，当然也支持性能监控，进程守护，负载均衡等功能（编不下去了…）&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="这货不是Linux" scheme="https://www.justpeth.com/categories/%E8%BF%99%E8%B4%A7%E4%B8%8D%E6%98%AFLinux/"/>
+    
+    
+      <category term="Linux瞎琢磨" scheme="https://www.justpeth.com/tags/Linux%E7%9E%8E%E7%90%A2%E7%A3%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux下安装nginx</title>
+    <link href="https://www.justpeth.com/2019/12/12/Linux%E4%B8%8B%E5%AE%89%E8%A3%85nginx/"/>
+    <id>https://www.justpeth.com/2019/12/12/Linux%E4%B8%8B%E5%AE%89%E8%A3%85nginx/</id>
+    <published>2019-12-12T12:35:15.000Z</published>
+    <updated>2019-12-12T12:37:32.916Z</updated>
+    
+    <content type="html"><![CDATA[<p>服务器转发，我选择的是nginx,毕竟当时买腾讯云服务器买的乞丐版的，nginx对比起来内存消耗要低很多</p><p>1、安装nginx</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">yum install nginx -y</span></pre></td></tr></table></figure><p>2、emm…就安装好了，然后启动nginx</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">nginx</span></pre></td></tr></table></figure><p>3、此时访问域名或者ip就能看到nginx的欢迎页面了</p><p>4、设置nginx开机启动</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> nginx.service</span></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;服务器转发，我选择的是nginx,毕竟当时买腾讯云服务器买的乞丐版的，nginx对比起来内存消耗要低很多&lt;/p&gt;
+&lt;p&gt;1、安装nginx&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;p
+      
+    
+    </summary>
+    
+    
+      <category term="这货不是Linux" scheme="https://www.justpeth.com/categories/%E8%BF%99%E8%B4%A7%E4%B8%8D%E6%98%AFLinux/"/>
+    
+    
+      <category term="Linux瞎琢磨" scheme="https://www.justpeth.com/tags/Linux%E7%9E%8E%E7%90%A2%E7%A3%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux下安装mongodb</title>
+    <link href="https://www.justpeth.com/2019/12/12/Linux%E4%B8%8B%E5%AE%89%E8%A3%85mongodb/"/>
+    <id>https://www.justpeth.com/2019/12/12/Linux%E4%B8%8B%E5%AE%89%E8%A3%85mongodb/</id>
+    <published>2019-12-12T12:26:25.000Z</published>
+    <updated>2019-12-12T12:34:47.853Z</updated>
+    
+    <content type="html"><![CDATA[<p>以前大学时学过sql，但是基本上忘得差不多了，而且写sql查询麻烦，感觉没有mongodb爽，接口服务就使用的mongodb，js语法的查询用着多好…</p><a id="more"></a><p>1、下载mongodb（下载的时候去官网找地址）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-4.0.11.tgz</span></pre></td></tr></table></figure><p>2、解压mongodb安装包</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">tar -zxvf mongodb-4.0.11.tgz</span></pre></td></tr></table></figure><p>3、可以选择修改文件夹名字，方便自己记忆</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">mv mongodb-linux-x86_64-4.0.11 mongodb-4.0.11</span></pre></td></tr></table></figure><p>4、新建数据库路径与日志文件存放路径</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">mkdir data</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> data</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">mkdir db</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">mkdir logs</span></pre></td></tr></table></figure><p>5、设置开机启动</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"/mongodb/mongodb-4.0.11/bin/mongod --dbpath=/mongodb/mongodb-4.0.11/data –logpath=/mongodb/mongodb-4.0.11/logs –logappend --bind_ip=0.0.0.0 --auth –port=27017"</span> &gt;&gt; /etc/rc.local</span></pre></td></tr></table></figure><p>6、设置账户权限</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">mongo</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">use admin</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">db.createUser(&#123;user: xxx, <span class="built_in">pwd</span>: xxx, roles: [role: xxx, db: xxx]&#125;)</span></pre></td></tr></table></figure><p>7、开启权限认证</p><p>如果是命令模式启动的话，就在原来的启动参数上，在加上 –auth 即可</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">mongod --auth --dbpath <span class="string">"D:\Program Files\MongoDB\Server\4.0\data"</span></span></pre></td></tr></table></figure><p>如果是windows service方式运行的话，打开 mongo配置文件mongod.cfg, 在security项下，将authorization设置为enabled, 默认是disabled</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">security:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  authorization: enabled</span></pre></td></tr></table></figure><p>然后重启service就可以了</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;以前大学时学过sql，但是基本上忘得差不多了，而且写sql查询麻烦，感觉没有mongodb爽，接口服务就使用的mongodb，js语法的查询用着多好…&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="这货不是Linux" scheme="https://www.justpeth.com/categories/%E8%BF%99%E8%B4%A7%E4%B8%8D%E6%98%AFLinux/"/>
+    
+    
+      <category term="Linux瞎琢磨" scheme="https://www.justpeth.com/tags/Linux%E7%9E%8E%E7%90%A2%E7%A3%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux下安装node</title>
+    <link href="https://www.justpeth.com/2019/12/12/Linux%E4%B8%8B%E5%AE%89%E8%A3%85node/"/>
+    <id>https://www.justpeth.com/2019/12/12/Linux%E4%B8%8B%E5%AE%89%E8%A3%85node/</id>
+    <published>2019-12-12T12:21:49.000Z</published>
+    <updated>2019-12-12T12:26:00.646Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前自己也写了一套博客，前端是react的spa，后台是采用的node服务，涉及到服务，就需要服务器环境配置，这里说下菜鸟是怎么一步一步搭建服务器环境的</p><a id="more"></a><p>1、在服务器上新件文件夹<code>node-v10.16.2</code></p><p>2、在个人电脑上下载了最新的Linux环境下的安装包，然后通过FileZilla上传到服务器（node-v10.16.2文件夹下），然后进入node-v10.16.2文件夹解压安装：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /node-v10.16.2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">xz -d node-v10.16.2-linux-x64.tar.xz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">tar -xvf node-v10.16.2-linux-x64.tar</span></pre></td></tr></table></figure><p>3、更改文件夹名字</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">mv node-v10.16.2-linux-x64 node</span></pre></td></tr></table></figure><p>4、配置软链，可以全局使用npm、node、npx命令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ln -s &#x2F;node-v10.16.2&#x2F;node&#x2F;bin&#x2F;node &#x2F;usr&#x2F;local&#x2F;bin&#x2F;node</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">ln -s &#x2F;node-v10.16.2&#x2F;node&#x2F;bin&#x2F;npm &#x2F;usr&#x2F;local&#x2F;bin&#x2F;npm</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">ln -s &#x2F;node-v10.16.2&#x2F;node&#x2F;bin&#x2F;npx &#x2F;usr&#x2F;local&#x2F;bin&#x2F;npx</span></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前自己也写了一套博客，前端是react的spa，后台是采用的node服务，涉及到服务，就需要服务器环境配置，这里说下菜鸟是怎么一步一步搭建服务器环境的&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="这货不是Linux" scheme="https://www.justpeth.com/categories/%E8%BF%99%E8%B4%A7%E4%B8%8D%E6%98%AFLinux/"/>
+    
+    
+      <category term="Linux瞎琢磨" scheme="https://www.justpeth.com/tags/Linux%E7%9E%8E%E7%90%A2%E7%A3%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue 图片裁剪</title>
+    <link href="https://www.justpeth.com/2019/12/12/vue-%E5%9B%BE%E7%89%87%E8%A3%81%E5%89%AA/"/>
+    <id>https://www.justpeth.com/2019/12/12/vue-%E5%9B%BE%E7%89%87%E8%A3%81%E5%89%AA/</id>
+    <published>2019-12-12T12:05:50.000Z</published>
+    <updated>2019-12-12T12:15:39.050Z</updated>
+    
+    <content type="html"><![CDATA[<p>公司项目中移动端用到的图片需要固定比例，在后台添加数据时需要对图片进行裁剪，这里推荐使用<code>vue-cropperjs</code>（对Cropper.js进行再次的封装适用于vue）。</p><a id="more"></a><p><a href="https://github.com/Agontuk/vue-cropperjs" target="_blank" rel="noopener">vue-cropperjs官方地址</a></p><p><a href="https://agontuk.github.io/vue-cropperjs/" target="_blank" rel="noopener">vue-cropperjs 在线example</a></p><p><a href="https://github.com/fengyuanchen/cropperjs#crop" target="_blank" rel="noopener">Cropper.js官方地址</a></p><h3 id="安装vue-cropperjs"><a href="#安装vue-cropperjs" class="headerlink" title="安装vue-cropperjs"></a>安装<code>vue-cropperjs</code></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">npm install vue-cropperjs</span></pre></td></tr></table></figure><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// Global</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> VueCropper <span class="keyword">from</span> <span class="string">'vue-cropperjs'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'cropperjs/dist/cropper.css'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">Vue.component(VueCropper);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// Local</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> VueCropper <span class="keyword">from</span> <span class="string">'vue-cropperjs'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'cropperjs/dist/cropper.css'</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  components: &#123; VueCropper&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">...</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">&lt;vue-cropper</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">  ref=<span class="string">"cropper"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">  :src=<span class="string">"imgSrc"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">  alt=<span class="string">"Source Image"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">  :cropmove=<span class="string">"cropImage"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">&lt;<span class="regexp">/vue-cropper&gt;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line"><span class="regexp">...</span></span></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;公司项目中移动端用到的图片需要固定比例，在后台添加数据时需要对图片进行裁剪，这里推荐使用&lt;code&gt;vue-cropperjs&lt;/code&gt;（对Cropper.js进行再次的封装适用于vue）。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="https://www.justpeth.com/categories/vue/"/>
+    
+    
+      <category term="菜鸡互啄" scheme="https://www.justpeth.com/tags/%E8%8F%9C%E9%B8%A1%E4%BA%92%E5%95%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue 数据不不更新问题</title>
+    <link href="https://www.justpeth.com/2019/12/11/vue-%E6%95%B0%E6%8D%AE%E4%B8%8D%E4%B8%8D%E6%9B%B4%E6%96%B0%E9%97%AE%E9%A2%98/"/>
+    <id>https://www.justpeth.com/2019/12/11/vue-%E6%95%B0%E6%8D%AE%E4%B8%8D%E4%B8%8D%E6%9B%B4%E6%96%B0%E9%97%AE%E9%A2%98/</id>
+    <published>2019-12-11T03:56:35.000Z</published>
+    <updated>2019-12-11T13:01:21.836Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="数组不更新问题"><a href="#数组不更新问题" class="headerlink" title="数组不更新问题"></a>数组不更新问题</h3><p>项目中时常碰到需要更新数组某一项的问题，但是直接更改数组某一项，dom不会更新，需要使用到<code>Vue.set</code></p><h3 id="对象属性赋值了，dom同样不更新"><a href="#对象属性赋值了，dom同样不更新" class="headerlink" title="对象属性赋值了，dom同样不更新"></a>对象属性赋值了，dom同样不更新</h3><p>某些情况在定义data时，定义了空对象，对对象属性赋值时，dom同样不更新，这时候也需要使用<code>Vue.set</code></p><p>子组件不能对props进行赋值操作，不然同样会导致后续dom不更新的问题</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;数组不更新问题&quot;&gt;&lt;a href=&quot;#数组不更新问题&quot; class=&quot;headerlink&quot; title=&quot;数组不更新问题&quot;&gt;&lt;/a&gt;数组不更新问题&lt;/h3&gt;&lt;p&gt;项目中时常碰到需要更新数组某一项的问题，但是直接更改数组某一项，dom不会更新，需要使用到&lt;code
+      
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="https://www.justpeth.com/categories/vue/"/>
+    
+    
+      <category term="菜鸡互啄" scheme="https://www.justpeth.com/tags/%E8%8F%9C%E9%B8%A1%E4%BA%92%E5%95%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo + github pages构建博客</title>
+    <link href="https://www.justpeth.com/2019/12/10/hexo%20+%20github%20pages%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://www.justpeth.com/2019/12/10/hexo%20+%20github%20pages%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/</id>
+    <published>2019-12-10T11:05:50.000Z</published>
+    <updated>2019-12-12T12:06:41.154Z</updated>
+    
+    <content type="html"><![CDATA[<p>来来回回试过好几种方式来构建自己的博客了，断断续续的使用react写了spa博客、用apollo-server + mongodb写了后台接口，之后又用next + ts重构博客中，然后顺手又试验了下hexo，果然还是使用hexo + githubPages的方式开发个人博客最简单。</p><a id="more"></a><h3 id="关于hexo"><a href="#关于hexo" class="headerlink" title="关于hexo"></a>关于hexo</h3><p>安装</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span></pre></td></tr></table></figure><p>初始化项目</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ cd &lt;folder&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">$ npm install</span></pre></td></tr></table></figure><p>注意不要在这个文件夹下面试用 Git 创建仓库，因为后面安装的主题内可能会带有 git 仓库，这样会导致包管理的混乱。</p><h3 id="github-pages"><a href="#github-pages" class="headerlink" title="github pages"></a>github pages</h3><p>新建一个项目</p><h3 id="hexo和github关联"><a href="#hexo和github关联" class="headerlink" title="hexo和github关联"></a>hexo和github关联</h3><p>在_config.yml中找到</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">deploy:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  type: git</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;justpeth&#x2F;blog.git</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  branch: master</span></pre></td></tr></table></figure><p>repo填写github的地址，branch填写分支</p><p>此时，本地的hexo项目还无法部署到github中去，需要一个额外依赖：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span></pre></td></tr></table></figure><p>现在可以使用hexo命令构建项目</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ npm run build</span></pre></td></tr></table></figure><p>然后部署到github上</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ npm run deploy</span></pre></td></tr></table></figure><p>项目成功的部署到了github上了</p><h3 id="githubPages设置"><a href="#githubPages设置" class="headerlink" title="githubPages设置"></a>githubPages设置</h3><p>进入github项目，进入setting，找到对应GitHub Pages设置的地方，</p><p><img src="http://pic.justpeth.com/githubPages-setting.png" alt="githubPagesSetting"></p><h3 id="hexo-设置CNAME"><a href="#hexo-设置CNAME" class="headerlink" title="hexo 设置CNAME"></a>hexo 设置CNAME</h3><p>一般情况下，如果githubpages配置了自己的域名，hexo每次部署上去都会重置这个域名，这个时候需要你再hexo项目中新建一个CNAME的文件，文件中输入自己配置的域名就行。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;来来回回试过好几种方式来构建自己的博客了，断断续续的使用react写了spa博客、用apollo-server + mongodb写了后台接口，之后又用next + ts重构博客中，然后顺手又试验了下hexo，果然还是使用hexo + githubPages的方式开发个人博客最简单。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="菜鸡互啄" scheme="https://www.justpeth.com/tags/%E8%8F%9C%E9%B8%A1%E4%BA%92%E5%95%84/"/>
+    
+  </entry>
+  
+</feed>
